@@ -222,6 +222,8 @@ pyrightconfig.json
 .history
 .ionide
 
-..Envairoment
+.envairoment
+
+.config_template.ini
 
 # End of https://www.toptal.com/developers/gitignore/api/python,linux,visualstudiocode,git
