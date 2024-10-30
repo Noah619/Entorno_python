@@ -1,3 +1,3 @@
-source .venv/bin/activate
-python Src/Main.py
+source .envairoment/bin/activate
+python3 Src/Main.py
 deactivate

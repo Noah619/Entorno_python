@@ -93,7 +93,3 @@ if __name__ == "__main__":
     # Crear el gestor de datos y obtener la información
     gestor = GestorDeDatosClimaticos(latitud, longitud)
     gestor.obtener_informacion()
-
-
-
-
