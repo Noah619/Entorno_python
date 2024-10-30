@@ -1,3 +1,3 @@
 source .envairoment/bin/activate
-python3 src/MAIN.py
+python3 src/Main.py
 deactivate

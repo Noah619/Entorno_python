@@ -1,3 +1,3 @@
-source .venv/bin/activate
-python Src/MAIN cliente.py
+source .envairoment/bin/activate
+python3 Src/MAIN cliente.py
 deactivate
