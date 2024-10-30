@@ -6,8 +6,8 @@ from Cliente.Funciones_cliente import iniciar_cliente
 
 if __name__ == "__main__":
     
-    host= input('Introduce Host: ')
-    port = input('Introduce el PORT: ')
-    port = int(port)
+    HOST= input('Introduce Host: ')
+    PORT = input('Introduce el PORT: ')
+    PORT = int(PORT)
 
-    iniciar_cliente(host,port)
+    iniciar_cliente(HOST,PORT)

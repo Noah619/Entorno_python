@@ -1,7 +1,13 @@
+import requests
+from geopy.geocoders import Nominatim
+from Funciones.Funciones import GestorDeDatosClimaticos
 
+# Ejemplo de uso
 if __name__ == "__main__":
-    print("Obtener el clima de un lugar concreto")
-    latitude = input("inserta la latitud ")
-    longitude = input("inserta la longitud ")
+    # Coordenadas del usuario
+    latitud = input("inserta la latitud ")
+    longitud = input("inserta la longitud ")
 
-    obtener_clima(latitude, longitude)
+    # Crear el gestor de datos y obtener la información
+    gestor = GestorDeDatosClimaticos(latitud, longitud)
+    gestor.obtener_informacion()
