@@ -1,7 +1,6 @@
 import requests
 from geopy.geocoders import Nominatim
-from Funciones.Funciones import GestorDeDatosClimaticos
-
+from Funciones.Funciones_ubicacion import GestorDeDatosClimaticos
 # Ejemplo de uso
 if __name__ == "__main__":
     # Coordenadas del usuario

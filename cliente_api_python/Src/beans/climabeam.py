@@ -1,26 +1,15 @@
 import requests
-from geopy.geocoders import Nominatim
-
-# Clase para obtener la dirección a partir de la latitud y longitud usando Nominatim
-class Localizador:
-    def __init__(self, latitud, longitud):
-        self.latitud = latitud
-        self.longitud = longitud
-        self.direccion = None
-
-    def obtener_direccion(self):
-        try:
-            geolocator = Nominatim(user_agent="test")
-            location = geolocator.reverse(f"{self.latitud}, {self.longitud}")
-            self.direccion = location.address if location else "Dirección no encontrada"
-        except Exception as e:
-            print(f"Error al obtener la dirección: {e}")
-            self.direccion = "Error al obtener la dirección"
-        return self.direccion
-
 
 # Clase para obtener el clima (temperatura y velocidad del viento) de Open-Meteo
+
 class Clima:
+    
+    latitud = None
+    longitud = None
+    temperatura = None
+    velocidad_viento = None
+    
+    
     def __init__(self, latitud, longitud):
         self.latitud = latitud
         self.longitud = longitud
@@ -64,22 +53,6 @@ class Clima:
             print(f"Error al obtener los datos climáticos: {e}")
             self.temperatura, self.velocidad_viento = "Error", "Error"
         return self.temperatura, self.velocidad_viento
+a = Clima("42.86","-2.64")
+print(a.obtener_datos_climaticos())
 
-
-# Clase GestorDeDatosClimaticos para manejar el flujo de datos y presentación
-class GestorDeDatosClimaticos:
-    def __init__(self, latitud, longitud):
-        self.latitud = latitud
-        self.longitud = longitud
-        self.localizador = Localizador(latitud, longitud)
-        self.clima = Clima(latitud, longitud)
-
-    def obtener_informacion(self):
-        # Obtener la dirección
-        direccion = self.localizador.obtener_direccion()
-        print(f"Dirección: {direccion}")
-        
-        # Obtener los datos climáticos
-        temperatura, velocidad_viento = self.clima.obtener_datos_climaticos()
-        print(f"Temperatura: {temperatura}°C")
-        print(f"Velocidad del viento: {velocidad_viento} km/h")
