@@ -12,23 +12,23 @@ for db_name in all_dbs:
     print(db_name)
 
 # mostramos los datos de una base de datos
-print("Mostramos los datos de una base de datos prueba-hola")
-db_pruebas = client['prueba']['hola'].find({})
+print("Mostramos los datos de una base de datos Noah-eda")
+db_pruebas = client['Noah']['eda'].find({})
 for x in db_pruebas:
     print(x)
 
 # metemos datos en la base de datos de prueba hola
 for x in range(30):
-    client['prueba']['hola'].insert_one({"numero": x})
+    client['Noah']['eda'].insert_one({"numero": x})
 
 # mostramos los datos de una base de datos
-print("Mostramos los datos de una base de datos prueba-hola")
-db_pruebas = client['prueba']['hola'].find({})
+print("Mostramos los datos de una base de datos Noah-eda")
+db_pruebas = client['Noah']['eda'].find({})
 for x in db_pruebas:
     print(x)
 
 # mostramos los datos de una base de datos mediante el filtro
-print("Mostramos los datos especificos de una base de datos prueba-hola")
-db_pruebas = client['prueba']['hola'].find({"numero":29})
+print("Mostramos los datos especificos de una base de datos Noah-eda")
+db_pruebas = client['Noah']['eda'].find({"numero":29})
 for x in db_pruebas:
     print(x)
