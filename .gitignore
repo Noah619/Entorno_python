@@ -226,4 +226,7 @@ pyrightconfig.json
 
 .config_template.ini
 
+.docker-info
+
+
 # End of https://www.toptal.com/developers/gitignore/api/python,linux,visualstudiocode,git
