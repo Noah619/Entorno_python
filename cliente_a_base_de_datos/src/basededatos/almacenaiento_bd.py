@@ -8,7 +8,6 @@ collection_name = "localizaciones"
 
 def insertar_localización(localización):
     client[db_name][collection_name].insert_one(localización)
-    
 
 def obtener_nombre_bases_de_datos():
     # Obtener una lista de todos los nombres de bases de datos
@@ -22,18 +21,14 @@ def obtener_nombre_bases_de_datos():
 def mostrar_todos_ls_datos_base_de_datos():
     # mostramos los datos de una base de datos
     print("Mostramos los datos de una base de datos Noah-eda")
-    db_pruebas = client['db_name']['collection_name'].find({})
+    db_pruebas = client[db_name][collection_name].find({})
     for x in db_pruebas:
         print(x)
 
-def meter_datos_database():
-    # metemos datos en la base de datos de prueba hola
-    for x in range(1):
-        client['db_name']['collection_name'].insert_one({"numero": x})
 
 def buscar_codigo_postal(codigo_postal):
     # mostramos los datos de una base de datos mediante el filtro
     print("Mostramos los datos especificos de una base de datos Noah-eda")
-    db_pruebas = client['db_name']['collection_name'].find({"codigo_postal": codigo_postal})
+    db_pruebas = client[db_name][collection_name].find({"codigo_postal": codigo_postal})
     for x in db_pruebas:
         print(x)

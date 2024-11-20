@@ -1,5 +1,9 @@
 import requests
 from geopy.geocoders import Nominatim
+from pymongo import MongoClient
+
+# Conexión a MongoDB
+client = MongoClient('mongodb://localhost:27017/')
 
 # Clase para obtener la dirección a partir de la latitud y longitud usando Nominatim
 class Localizador:
@@ -17,6 +21,9 @@ class Localizador:
             print(f"Error al obtener la dirección: {e}")
             self.direccion = "Error al obtener la dirección"
         return self.direccion
+
+def to dict(self):
+    #convierte 
 
 
 # Clase para obtener el clima (temperatura y velocidad del viento) de Open-Meteo
@@ -93,3 +100,27 @@ if __name__ == "__main__":
     # Crear el gestor de datos y obtener la información
     gestor = GestorDeDatosClimaticos(latitud, longitud)
     gestor.obtener_informacion()
+# Clase para almacenar las localizaciones sin duplicados
+class AlmacenamientoLocalizaciones:
+    def __init__(self):
+        self.localizaciones = {}
+
+    def agregar_localizacion(self, latitud, longitud, direccion):
+        clave = f"{latitud},{longitud}"  
+        # Clave única basada en latitud y longitud
+        if clave not in self.localizaciones:
+            self.localizaciones[clave] = direccion
+            print(f"Localización agregada: {direccion}")
+        else:
+            print(f"La localización ya existe: {direccion}")
+
+    def mostrar_localizaciones(self):
+        print("Localizaciones almacenadas:")
+        for clave, direccion in self.localizaciones.items():
+            print(f"{clave}: {direccion}")
+
+def insertar_nueva_ubicacion(self, latitud, longitud):
+    agregar_localizaciones = False
+    for ubicación in self.ubicaciones:
+        if ubicacion.check_lat_lng(latitud, longitud):
+            
